@@ -32,7 +32,7 @@ public class DocumentTask extends RecursiveTask<Integer> {
           }
           else // split into subworks
           {
-              Integer mid = (endLine - startLine) / 2;
+              Integer mid = (endLine + startLine) / 2;
               DocumentTask leftTask = new DocumentTask(startLine,mid,documents,searchWord);
               DocumentTask rightTask = new DocumentTask(mid  , endLine,documents,searchWord);
                invokeAll(leftTask,rightTask);
